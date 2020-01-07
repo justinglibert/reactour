@@ -199,7 +199,7 @@ class Tour extends Component {
   }
 
   calculateNode = (node, stepPosition, cb) => {
-    const { scrollDuration, inViewThreshold, scrollOffset } = this.props
+    const { scrollDuration, inViewThreshold, scrollOffset, forceScroll } = this.props
     const attrs = hx.getNodeRect(node)
     const w = Math.max(
       document.documentElement.clientWidth,
@@ -209,7 +209,7 @@ class Tour extends Component {
       document.documentElement.clientHeight,
       window.innerHeight || 0
     )
-    if (!hx.inView({ ...attrs, w, h, threshold: inViewThreshold })) {
+    if (!hx.inView({ ...attrs, w, h, threshold: inViewThreshold }) || forceScroll) {
       const parentScroll = Scrollparent(node)
       const offset = scrollOffset
         ? scrollOffset
