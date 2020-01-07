@@ -8,6 +8,7 @@ export const propTypes = {
   closeWithMask: PropTypes.bool,
   inViewThreshold: PropTypes.number,
   isOpen: PropTypes.bool.isRequired,
+  forceScroll: PropTypes.bool,
   lastStepNextButton: PropTypes.node,
   maskClassName: PropTypes.string,
   maskSpace: PropTypes.number,
@@ -70,4 +71,5 @@ export const defaultProps = {
   rounded: 0,
   accentColor: '#007aff',
   closeWithMask: true,
+  forceScroll: false
 }
